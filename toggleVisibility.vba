@@ -3,20 +3,20 @@ Private Sub ViewHide_Click()
 Dim cols As String
 
 'Select columns
-cols = "F:H"
+cols = "A:Z"
 
     If ViewHide.Value = True Then
 
-        Sheets("02_Applications_&_systems").Visible = xlSheetVeryHidden
-        Sheets("03_Pivot_PBC").Visible = xlSheetVeryHidden
+        Sheets("sheet_name").Visible = xlSheetVeryHidden
+        Sheets("sheet_name").Visible = xlSheetVeryHidden
         
         Application.ActiveSheet.Columns(cols).Hidden = True
         Application.ActiveSheet.Columns(cols).Hidden = True
         
     Else
     
-        Sheets("02_Applications_&_systems").Visible = xlSheetVisible
-        Sheets("03_Pivot_PBC").Visible = xlSheetVisible
+        Sheets("sheet_name").Visible = xlSheetVisible
+        Sheets("sheet_name").Visible = xlSheetVisible
         
         Application.ActiveSheet.Columns(cols).Hidden = False
         Application.ActiveSheet.Columns(cols).Hidden = False
