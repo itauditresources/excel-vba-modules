@@ -2,4 +2,4 @@
 
 Sample of potentially useful VBA modules 
 
-- Toggle Visivitilty Button
+- Toggle Visibility Button
