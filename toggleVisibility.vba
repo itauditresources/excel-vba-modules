@@ -1,30 +1,44 @@
-Private Sub ViewHide_Click()
+'Author: Tim Lui
+'Ownership Avega S.à.r.l.
+'Be careful: The script has no error handling in place
 
-Dim cols As String
-Dim sheets As Worksheet
-Dim wsCollection as Sheets
+Option Explicit
 
-Set wsCollection = Worksheets
-Set ws = Sheets("name")
+Private Sub ToggleButton1_Click()
 
-'Select columns
-cols = "A:Z"
-
-    If ViewHide.Value = True Then
-
-        Sheets(ws).Visible = xlSheetVeryHidden
-        Sheets(ws).Visible = xlSheetVeryHidden
-        
-        Application.ActiveSheet.Columns(cols).Hidden = True
-        Application.ActiveSheet.Columns(cols).Hidden = True
-        
-    Else
+    'Declare variables
+    Dim cols As String
+    Dim i As Integer
+    Dim sheetNames() As String
     
-        Sheets(ws).Visible = xlSheetVisible
-        Sheets(ws).Visible = xlSheetVisible
+    'Declare the names
+    sheetNames = Split("Sheet2,Sheet3", ",")
+    
+    'Select columns
+    cols = "A:B"
+
+    If ToggleButton1.Value = True Then
         
-        Application.ActiveSheet.Columns(cols).Hidden = False
-        Application.ActiveSheet.Columns(cols).Hidden = False
+        'Hide the selected sheets
+        For i = LBound(sheetNames) To UBound(sheetNames)
         
+            Sheets(sheetNames(i)).Visible = xlSheetVeryHidden
+            
+            If cols <> vbNullString Then
+                Application.ActiveSheet.Columns(cols).Hidden = True
+            End If
+        Next i
+            
+    Else
+        
+        'Unhide the selected sheets
+        For i = LBound(sheetNames) To UBound(sheetNames)
+        
+            Sheets(sheetNames(i)).Visible = xlSheetVisible
+            
+            If cols <> vbNullString Then
+                Application.ActiveSheet.Columns(cols).Hidden = False
+            End If
+        Next i
     End If
 End Sub
