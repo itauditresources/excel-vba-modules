@@ -12,7 +12,7 @@ Private Sub ViewHide_Click()
     Dim i As Integer
     Dim sheetNames() As String
     
-    'Declare the names
+    'Declare the names manually
     sheetNames = Split("02_Applications_&_systems,03_Pivot_PBC", ",")
     
     'Select columns
