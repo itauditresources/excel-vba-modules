@@ -1,5 +1,5 @@
 'Author: Tim Lui
-'Ownership Avega S.à.r.l.
+'Ownership: Avega S.à.r.l.
 'Be careful: The script has no error handling in place
 'If you provide the wrong file names, you cannot unhide the sheets
 
