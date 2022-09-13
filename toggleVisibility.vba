@@ -1,10 +1,11 @@
 'Author: Tim Lui
 'Ownership Avega S.à.r.l.
 'Be careful: The script has no error handling in place
+'If you provide the wrong file names, you cannot unhide the sheets
 
 Option Explicit
 
-Private Sub ToggleButton1_Click()
+Private Sub ViewHide_Click()
 
     'Declare variables
     Dim cols As String
@@ -12,12 +13,12 @@ Private Sub ToggleButton1_Click()
     Dim sheetNames() As String
     
     'Declare the names
-    sheetNames = Split("Sheet2,Sheet3", ",")
+    sheetNames = Split("02_Applications_&_systems,03_Pivot_PBC", ",")
     
     'Select columns
-    cols = "A:B"
+    cols = "F:H"
 
-    If ToggleButton1.Value = True Then
+    If ViewHide.Value = True Then
         
         'Hide the selected sheets
         For i = LBound(sheetNames) To UBound(sheetNames)
